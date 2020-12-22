@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Stone Soup Kitchen
+  description: Configure sudo on Linux systems
+  license: BSD-3-Clause
+  min_ansible_version: 2.9
+  platforms:
+    - name: Debian
+      versions:
+        - buster
+  galaxy_tags:
+    - acl
+    - admin
+    - security
+    - sudo
+    - sudoers
+dependencies: []
