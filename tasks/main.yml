@@ -1,2 +1,3 @@
 ---
-# tasks file for sudo
+- include_tasks: "install.yml"
+

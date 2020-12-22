@@ -1,2 +1,5 @@
 ---
-# defaults file for sudo
+# State of the sudo package. Use `present` to make sure the package is
+# installed, or use `latest` to make sure the package is always at the latest
+# version.
+sudo_package_state: present

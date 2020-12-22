@@ -1,0 +1,12 @@
+# Install the sudo package.
+---
+- name: Define sudo_package
+  set_fact:
+    sudo_package: "{{ __sudo_package }}"
+  when: sudo_package is not defined
+
+- name: Install sudo
+  apt:
+    name: "{{ sudo_package }}"
+    state: "{{ sudo_package_state }}"
+

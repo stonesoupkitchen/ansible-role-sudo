@@ -1,10 +1,12 @@
 ---
-# This is an example playbook to execute Ansible tests.
-
 - name: Verify
   hosts: all
   gather_facts: false
   tasks:
-  - name: Example assertion
+  - name: Collect host package information
+    package_facts:
+      manager: "auto"
+
+  - name: Package "sudo" should be installed
     assert:
-      that: true
+      that: '"sudo" in ansible_facts.packages'

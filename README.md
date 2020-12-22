@@ -8,7 +8,10 @@ TODO.
 
 ## Role Variables
 
-TODO.
+* `sudo_package`: The sudo package, by name. Use `sudo=ver` to pin to a version.
+  Defaults to `sudo`.
+* `sudo_package_state`: The install state of the sudo package. Defaults to
+  `present`.
 
 ## Example Playbook
 
