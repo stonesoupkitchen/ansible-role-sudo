@@ -10,3 +10,33 @@
   - name: Package "sudo" should be installed
     assert:
       that: '"sudo" in ansible_facts.packages'
+
+  - name: Collect /etc/sudoers file system information
+    stat:
+      path: /etc/sudoers
+    register: etc_sudoers
+
+  - name: /etc/sudoers should be owned by root
+    assert:
+      that:
+        - etc_sudoers.stat.uid == 0
+        - etc_sudoers.stat.gid == 0
+
+  - name: /etc/sudoers should have permissions 0440
+    assert:
+      that: etc_sudoers.stat.mode == "0440"
+
+  - name: Collect /etc/sudoers.d file system information
+    stat:
+      path: /etc/sudoers.d
+    register: etc_sudoers_d
+
+  - name: /etc/sudoers.d should be owned by root
+    assert:
+      that:
+        - etc_sudoers_d.stat.uid == 0
+        - etc_sudoers_d.stat.gid == 0
+
+  - name: /etc/sudoers.d should have permissions 0750
+    assert:
+      that: etc_sudoers_d.stat.mode == "0750"
