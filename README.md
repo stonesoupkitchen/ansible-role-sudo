@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H43P9OI)
+
 # Ansible role: sudo
 
 An Ansible role for configuring sudo on Linux systems.
