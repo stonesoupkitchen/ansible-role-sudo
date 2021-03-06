@@ -41,5 +41,5 @@ Run molecule tests:
 
 ## License
 
-See LICENSE.md
+See [LICENSE](LICENSE).
 
