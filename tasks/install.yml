@@ -9,4 +9,3 @@
   apt:
     name: "{{ sudo_package }}"
     state: "{{ sudo_package_state }}"
-
