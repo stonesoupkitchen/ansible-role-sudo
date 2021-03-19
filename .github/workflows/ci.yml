@@ -33,13 +33,17 @@ jobs:
         run: |
           ansible-lint
 
-      - name: Lint with ansible-lint and publish Code Climate report
+      - name: Lint with ansible-lint and generate Code Climate report
         if: ${{ github.event_name == 'push' }}
-        uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: ansible-lint -f codeclimate
+        run: |
+          ansible-lint -f codeclimate | tee ansiblelint.json
+
+      - name: Publish Code Climate report
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          curl -LJ https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o cc-test-reporter
+          chmod +x cc-test-reporter
+          ./cc-test-reporter upload-coverage --input ansiblelint.json --id ${{ secrets.CC_TEST_REPORTER_ID }}
 
       - name: Run Molecule tests
         run: molecule test
