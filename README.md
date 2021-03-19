@@ -4,10 +4,6 @@
 
 An Ansible role for configuring sudo on Linux systems.
 
-## Requirements
-
-TODO.
-
 ## Role Variables
 
 * `sudo_package`: The sudo package, by name. Use `sudo=ver` to pin to a version.
@@ -21,7 +17,7 @@ Default usage:
 
     - hosts: servers
       roles:
-         - { role: stonesoupkitchen.sudo }
+         - stonesoupkitchen.sudo
 
 ## Development
 
