@@ -29,8 +29,17 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Lint with ansible-lint
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
           ansible-lint
+
+      - name: Lint with ansible-lint and publish Code Climate report
+        if: ${{ github.event_name == 'push' }}
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: ansible-lint -f codeclimate
 
       - name: Run Molecule tests
         run: molecule test
