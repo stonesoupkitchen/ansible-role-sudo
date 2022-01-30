@@ -1,41 +1,49 @@
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H43P9OI)
+[![CI](https://github.com/StoneSoupKitchen/ansible-role-sudo/actions/workflows/ci.yml/badge.svg)](https://github.com/StoneSoupKitchen/ansible-role-sudo/actions/workflows/ci.yml)
 
 # Ansible role: sudo
 
 An Ansible role for configuring sudo on Linux systems.
 
+## Requirements
+
+Supported operating systems:
+* Debian 10 (Buster)
+
 ## Role Variables
 
-* `sudo_package`: The sudo package, by name. Use `sudo=ver` to pin to a version.
-  Defaults to `sudo`.
-* `sudo_package_state`: The install state of the sudo package. Defaults to
-  `present`.
+The following table lists all variables that can be overridden
+and their default values.
 
-## Example Playbook
+| Name                     | Default Value | Description                      |
+| ------------------------ | ------------- | -------------------------------- |
+| `sudo_package` | sudo | Name of the sudo package. Use `name=ver` format to pin. |
+| `sudo_package_state` | present | Installation state for sudo package. |
 
-Default usage:
+## Examples
 
-    - hosts: servers
-      roles:
-         - stonesoupkitchen.sudo
+```yaml
+- hosts: all
+  roles:
+    - stonesoupkitchen.sudo
+```
 
 ## Development
 
-Ceate a virtual environment and install modules from requirements.txt:
+A Makefile is included for easier development with `pipenv`.
+After cloning this repository,
+use the following commands to set up an environment.
 
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+    pipenv install --dev
 
-Enable pre-commit checks:
+To lint your changes with ansible-lint:
 
-    pre-commit install
+    make lint
 
-Run molecule tests:
+To run tests with molecule:
 
-    molecule test
+    make test
 
 ## License
 
-See [LICENSE](LICENSE).
+See [LICENSE](./LICENSE).
 
