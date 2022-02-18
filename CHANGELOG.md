@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.1.1] - 2022-02-18
+
+### Miscellaneous Tasks
+
+- Bump ansible-core from 2.11.7 to 2.11.8 (#4) (9f52d29)
+- Bump molecule from 3.5.2 to 3.6.1 (#7) (11b8d6e)
+- Bump ansible-lint from 5.3.2 to 5.4.0 (#6) (05a9734)
+
 ## [0.1.0] - 2022-01-30
 
 ### Miscellaneous Tasks
