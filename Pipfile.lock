@@ -344,11 +344,11 @@
         },
         "molecule-docker": {
             "hashes": [
-                "sha256:12c180c95c3f022d89aedd52e42b57e5c1e0ee4d4be8ec997c3dcb9c28d7e2a3",
-                "sha256:c447842ee4817fe6efa64ca6a73b1e3081cd60710ed86385b6ad7569d9599ab5"
+                "sha256:195b97673cbc2335cfa6810816de5cbf807507bf350a9d16ca98b224b1647145",
+                "sha256:d439b075789be700b6594ed73f3254e2a25ed61dcf312d80ab6e718d13bf150e"
             ],
             "index": "pypi",
-            "version": "==2.0.0"
+            "version": "==2.1.0"
         },
         "packaging": {
             "hashes": [
